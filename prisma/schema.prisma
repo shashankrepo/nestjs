@@ -17,8 +17,12 @@ model User {
   updated_at DateTime @updatedAt
   first_name String?
   last_name String?
-  email String
+  email String @unique 
   hash String
+
+  bookmarks Bookmark[]
+  
+   @@map("users")
 }
 
 model Bookmark {
@@ -29,4 +33,10 @@ model Bookmark {
   title String
   description String?
   link String
+
+  userId String
+  user User @relation(fields: [userId], references: [id])
+
+   @@map("bookmarks ")
+
 }
