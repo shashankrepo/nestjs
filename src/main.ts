@@ -10,6 +10,6 @@ async function bootstrap() {
       enableDebugMessages: true,
     }),
   );
-  await app.listen(5555);
+  await app.listen(3333);
 }
 bootstrap();
